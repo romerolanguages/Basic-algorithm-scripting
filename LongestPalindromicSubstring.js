@@ -1,3 +1,9 @@
+/*
+The original code for this program is from github.com/IDeserve, in Java.
+I have transformed it to JavaScript and modified it for my learning purposes.
+*/
+
+
 package questions.virendra;
 
 public class LongestPalindromicSubstring {

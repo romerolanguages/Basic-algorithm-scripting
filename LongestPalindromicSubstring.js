@@ -3,21 +3,21 @@ The original code for this program is from github.com/IDeserve, in Java.
 I have transformed it to JavaScript and modified it for my learning purposes.
 */
 
-
-package questions.virendra;
-
-public class LongestPalindromicSubstring {
+function LongestPalindromicSubstring() {
 	
-	public static String LPS(String s) {
-		  int n = s.length();
-		  int palindromeBeginsAt = 0; //index where the longest palindrome begins
-		  int max_len = 1;//length of the longest palindrome
+	//this program receives the string "str" somehow, then:
+
+		  var n = str.length();
+		  var palindromeBeginsAt = 0; //index where the longest palindrome begins
+		  var max_len = 1;//length of the longest palindrome
+		  
+		  // how to fix/change boolean from Java to JavaScript?
 		  boolean palindrome[][] = new boolean[n][n]; //boolean table to store palindrome truth
 		  
 		  //Trivial case: single letter palindromes
 		  for (int i = 0; i < n; i++) {
 			  palindrome[i][i] = true;
-		  }
+		  }//end of for
 		  
 		  //Finding palindromes of two characters.
 		  for (int i = 0; i < n-1; i++) {
@@ -25,8 +25,8 @@ public class LongestPalindromicSubstring {
 		      palindrome[i][i+1] = true;
 		      palindromeBeginsAt = i;
 		      max_len = 2;
-		    }
-		  }
+		    } //end of if
+		  } //end of for
 		  
 		  //Finding palindromes of length 3 to n and saving the longest
 		  for (int curr_len = 3; curr_len <= n; curr_len++) {
@@ -38,14 +38,11 @@ public class LongestPalindromicSubstring {
 		    	palindrome[i][j] = true; 
 		        palindromeBeginsAt = i;
 		        max_len = curr_len;
-		      }
-		    }
-		  }
+		      }//end of if
+		    }//end of for
+		  }//end of for
 		  return s.substring(palindromeBeginsAt, max_len + palindromeBeginsAt);
-		}
+		}//end of public
 
-	public static void main(String args[])
-	{
-		System.out.println(LPS("bananas"));
-	}
-}
+
+}//end of function
